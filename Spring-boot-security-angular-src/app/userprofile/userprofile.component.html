@@ -1,0 +1,72 @@
+<title>User View Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">SPRING BOOT SECURITY DEMONSTRATION</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/userprofile/{{user.uid}}">View Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/userlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">User {{user.username}} Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">VIEW PROFILE</h1><br>
+
+
+            <div class="col-sm">
+            <div style="margin: auto;border: 2px solid violet;border-radius: 5px;padding: 5px 26px;">
+            <h1 class="text-center">User Details</h1><br>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <img src="assets/icon-g81b0c3767_1920.png" style="width:300px; height:300px;">
+                </div>
+                <div class="col-sm"></div>
+            </div><br>
+            <table class="table table-dark table-responsive-sm">
+              <tr>
+                <th>Id </th>
+                <th>{{user.uid}}</th>
+              </tr>    
+              <tr>
+                <td>Email</td>
+                <td>{{user.email}}</td>
+              </tr>
+              <tr>
+                <td>Username</td>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>{{user.password}}</td>
+              </tr>
+          </table><br>
+
+
+          </div>
+          </div>
+
+
+
+          </div>
+          
+
+        
+
+
+
+        </div>
+        </div>
+    

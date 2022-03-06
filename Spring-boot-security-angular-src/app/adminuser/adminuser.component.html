@@ -1,0 +1,105 @@
+<title>Add User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">SPORTS CART</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/adminuser">Add User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/adminlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Admin Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">USER REGISTRATION</h1><br>
+          <div class="row">
+          <div class="col-sm-4">
+            <div style="margin:auto;border:2px solid white;border-radius:5px;padding: 10px;">
+              <h3 style="text-align: center;">User Registration(All information required*)</h3>
+                <form action="#" post="method">
+                  <div class="form-group">
+                    <label for="uid">User Id:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="user.uid" placeholder="Enter User Id while updating Only" id="uid" name="uid">
+                  </div><br>
+                      <div class="form-group">
+                        <label for="email">Email:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Enter Email" id="email" name="email" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="username">Username:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Enter Unique Username" id="username" name="username" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="password">New/Current Password:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="user.password" placeholder="Enter New/Current Password" id="password" name="password" required>
+                      </div><br>
+                    <input type="submit" class="btn btn-primary" style="width:45%;font-size:30px;background-color:blue;color:white;" value="Register" (click)="postUserNow()" >
+                    <input type="submit" class="btn btn-success" style="width:45%;font-size:30px;background-color:coral;color:white;" value="Update" (click)="updateUserNow()"><br>
+                
+                </form>
+                </div>
+              </div><br><br><br><br><br>
+              <div class="col-sm-8">
+                <h3 style="text-align: center;">Search User By Uid</h3>
+                <br>
+                <div class="form-group">
+                    <label for="search">Search By Uid:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Search By Uid" id="search" name="search"><br>
+                    <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Search</button><br>
+                  </div><br>
+                  <table class="table table-dark table-responsive">
+                    <tr>
+                        <th>Uid</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr >
+                        <td>{{user.uid}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.password}}</td>
+                        <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delUser(user.uid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                    </tr>
+                </table>
+                <br>
+
+                <h3 style="text-align: center;">List of Users</h3>
+                <br>
+                <table class="table table-dark table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Uid</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let user of users">
+                    <td>{{user.uid}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delUser(user.uid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                  </tr>
+                  </tbody>
+              </table><br><br>
+ 
+              </div>
+        </div>
+        </div>
+    </div>
